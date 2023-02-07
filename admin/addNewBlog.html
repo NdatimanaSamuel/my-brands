@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" > -->
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js" ></script>
+</head>
+<body>
+
+<section id="menu">
+ <div class="logo">
+ 	<img src="images/samplelogo.png">
+ 	<h2><span>Telex</span>Folio</h2>
+ </div>	
+
+ <div class="items">
+ 	<li><i class='bx bxs-dashboard'></i><a href="index.html">Dashboard</a></li>
+ 	<li  class="active"><i class='bx bxs-calendar-edit'></i><a href="manageBlogs.html">Manage Blogs</a></li>
+ 	<li><i class='bx bx-list-plus'></i><a href="manageSkills.html">Manage Skills</a></li>
+ 	<li><i class='bx bx-bar-chart-square'></i><a href="manageReviews.html">Manage Reviews</a></li>
+ 	<li><i class='bx bxs-comment-add'></i><a href="">Manage Messages</a></li>
+ </div>
+
+</section>
+
+<section id="interface">
+ <div class="navigation">
+ 	<div class="n1">
+ 		
+ 		<div >
+ 			<i id="meu-btn" class='bx bx-menu'></i>
+ 		</div>
+
+ 		<!-- <div class="search">
+ 			<i  class='bx bx-search'></i>
+ 			<input type="text" name="" placeholder="Search">
+ 		</div> -->
+ 	</div>
+ 	<div class="profile">
+ 		<!-- <i class='bx bxs-bell-ring' ></i> -->
+ 		<img src="images/profile.jpg">
+ 	</div>
+ </div>	
+ 
+ <h3 class="i-name">
+ 	 Manage Blogs
+ </h3>
+<!--  <div class="values">
+ 	<div class="val-box">
+ 		<i class='bx bxl-blogger'></i>
+ 		<div class="">
+ 			<h3>4</h3>
+ 			<span>Blogs</span>
+ 		</div>
+ 	</div>
+
+ 	<div class="val-box">
+ 		<i class='bx bx-list-plus'></i>
+ 		<div class="">
+ 			<h3>6</h3>
+ 			<span>Skills</span>
+ 		</div>
+ 	</div>
+
+ 	<div class="val-box">
+ 		<i class='bx bxs-message-dots'></i>
+ 		<div class="">
+ 			<h3>2</h3>
+ 			<span>Messages</span>
+ 		</div>
+ 	</div>
+
+ 	
+ 	
+
+ </div> -->
+<!-- div class="btnmove">
+ 		 <a href="addNewBlog.html"><buttons class="btplus"><i class='bx bx-plus'></i>ADD NEW</button></a>
+ 	</div> -->
+ 	<form action="#">
+        
+ 
+        <div class="container">
+        	<div class="headerblog">
+            <span >Adde New Blog</span>
+             </div>
+            <input type="file"  name="uname" required>
+ 
+            
+            <input type="text" placeholder="Description" name="psw" required>
+ 
+            <button type="submit">Save</button>
+         
+        </div>
+ 
+       
+    </form>
+<!--  <dir class="board">
+ 	
+
+ 	<table width="100%">
+ 		<thead>
+ 			<tr>
+ 				<td>Name</td>
+ 				<td>Title</td>
+ 				<td>Status</td>
+ 				<td>Role</td>
+ 				<td>Action</td>
+ 			</tr>
+ 		</thead>
+ 		<tbody>
+ 			<tr>
+ 				<td class="people">
+ 					<img src="images/imageone.jpg">
+ 					<div class="people-de">
+ 						<h5>John Doe</h5>
+ 						<p>john@gmail.com</p>
+ 					</div>
+ 				</td>
+ 				<td class="people-desc">
+ 					<h5>Software Engineer</h5>
+ 					<p>Web Dev</p>
+
+ 				</td>
+ 				<td class="active">
+ 					<p>Active</p>
+ 				</td>
+ 				<td class="role">
+ 					<p>Owner</p>
+ 				</td>
+ 				<td>
+ 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
+ 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
+ 				</td>
+ 			</tr>
+ 			<tr>
+ 				<td class="people">
+ 					<img src="images/imagethree.jpg">
+ 					<div class="people-de">
+ 						<h5>John Doe</h5>
+ 						<p>john@gmail.com</p>
+ 					</div>
+ 				</td>
+ 				<td class="people-desc">
+ 					<h5>Software Engineer</h5>
+ 					<p>Web Dev</p>
+
+ 				</td>
+ 				<td class="active">
+ 					<p>Active</p>
+ 				</td>
+ 				<td class="role">
+ 					<p>Owner</p>
+ 				</td>
+ 				<td>
+ 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
+ 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
+ 				</td>
+ 			</tr>
+ 			<tr>
+ 				<td class="people">
+ 					<img src="images/imagetwo.jpg">
+ 					<div class="people-de">
+ 						<h5>John Doe</h5>
+ 						<p>john@gmail.com</p>
+ 					</div>
+ 				</td>
+ 				<td class="people-desc">
+ 					<h5>Software Engineer</h5>
+ 					<p>Web Dev</p>
+
+ 				</td>
+ 				<td class="active">
+ 					<p>Active</p>
+ 				</td>
+ 				<td class="role">
+ 					<p>Owner</p>
+ 				</td>
+ 				<td>
+ 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
+ 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
+ 				</td>
+ 			</tr>
+ 		</tbody>
+ 	</table>
+ </dir> -->
+</section>
+
+
+<script >
+	$('#meu-btn').click(function () {
+		$('#menu').toggleClass("active");
+	})
+</script>
+</body>
+</html>
