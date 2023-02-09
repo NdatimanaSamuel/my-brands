@@ -412,7 +412,7 @@ width: 250px;
  }
 
   .contact-form .loginbtn{
-  	margin-left: 200px;
+  /*	margin-left: 2px;*/
  	width: 180px;
  	font-size: 1rem;
  	letter-spacing:1px;
@@ -610,4 +610,36 @@ width: 250px;
 }
 .abouimage img{
 	border-radius: 50%;
+}
+
+.input-control .name,.input-control .email{
+	width:400px;
+	margin-left: 80px;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+.input-control .error {
+    color: #ff3860;
+    font-size:12px;
+    height: 13px;
+     margin-left: 100px;
+}
+
+.controlinput{
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    /*margin-left: 10px;*/
+}
+.accountNew{
+    margin-left: 10px;
+}
+.accountNew small{
+	color: #fff;
 }
