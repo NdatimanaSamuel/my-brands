@@ -476,3 +476,28 @@ table{
    	margin-left: -16px;
    	margin-bottom: 20px;
    }
+
+
+.input-control .name,.input-control .email{
+	width:400px;
+	margin-left: 80px;
+}
+
+.input-controls .name,.input-controls .email{
+	width:600px;
+	
+}
+
+.input-control.success input,.input-controls.success input,.input-controls.success textarea   {
+    border-color: #09c372;
+}
+
+.input-control.error input,.input-controls.error input,.input-controls.error textarea   {
+    border-color: #ff3860;
+}
+.input-control .error,.input-controls .error {
+    color: #ff3860;
+    font-size:12px;
+    height: 13px;
+     margin-left: 200px;
+}

@@ -17,8 +17,8 @@
 
  <div class="items">
  	<li><i class='bx bxs-dashboard'></i><a href="index.html">Dashboard</a></li>
- 	<li  class="active"><i class='bx bxs-calendar-edit'></i><a href="manageBlogs.html">Manage Blogs</a></li>
- 	<li><i class='bx bx-list-plus'></i><a href="manageSkills.html">Manage Skills</a></li>
+ 	<li><i class='bx bxs-calendar-edit'></i><a href="manageBlogs.html">Manage Blogs</a></li>
+ 	<li class="active"><i class='bx bx-list-plus'></i><a href="manageSkills.html">Manage Skills</a></li>
  	<li><i class='bx bx-bar-chart-square'></i><a href="manageReviews.html">Manage Reviews</a></li>
  	<li><i class='bx bxs-comment-add'></i><a href="">Manage Messages</a></li>
  </div>
@@ -79,18 +79,21 @@
 <!-- div class="btnmove">
  		 <a href="addNewBlog.html"><buttons class="btplus"><i class='bx bx-plus'></i>ADD NEW</button></a>
  	</div> -->
- 	<form action="#">
+ 	<form action="" id="contact-form" >
         
  
         <div class="container">
         	<div class="headerblog">
             <span >Adde New Skills</span>
              </div>
-            <input type="text" placeholder="Skill Title" name="uname" required>
- 
-            
-            <input type="text" placeholder="Skill Description" name="psw" required>
- 
+                <div class="input-control">
+            <input id="title" type="text" placeholder="Skill Title" name="uname" >
+           <div class="error"></div>
+              </div>
+             <div class="input-control">
+            <input id="descr" type="text" placeholder="Skill Description" name="psw" >
+              <div class="error"></div>
+              </div>
             <button type="submit">Save</button>
          
         </div>
@@ -194,5 +197,6 @@
 		$('#menu').toggleClass("active");
 	})
 </script>
+<script type="text/javascript" src="js/addSkillsValidation.js"></script>
 </body>
 </html>

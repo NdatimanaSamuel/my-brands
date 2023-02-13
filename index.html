@@ -235,14 +235,28 @@
 <section  class="contact container" id="contact">
 	<h2 class="heading">CONTACT ME</h2>
 	<!--contact form-->
-	<form action="" class="contact-form" id="contact-form">
-		<input type="text" name="" placeholder="Your name" class="name" required="">
-		<input type="email" name="" id="" placeholder="Email Address" class="email" required="">
-		<input type="text" name="" id="" placeholder="Subject" class="subject" required="">
-	<textarea name="" id="" cols="30" rows="10" placeholder="Write Message" class="message" required="">
-			
+	<form action="" class="contact-form" id="contacts-form">
+		<div class="input-controls">
+			<input id="names" type="text" name="" placeholder="Your name" class="name" >
+		<div class="error"></div>
+		</div>
+		<div class="input-controls">
+		<input id="email" type="text" name="" placeholder="Email Address" class="email" >
+		<div class="error"></div>
+		</div>
+
+		<div class="input-controls">
+		<input id="subject" type="text" name="" placeholder="Subject" class="name" >
+		<div class="error"></div>
+		</div>
+
+		<div class="input-controls">
+	<textarea id="messages" name="" cols="30" rows="10" placeholder="Write Message" class="name" >
 		</textarea>
-<input type="submit" name="" id="" value="Send Message" class="send-btn" required="">
+		<div class="error"></div>
+		</div>
+
+<input type="submit" value="Send Message" class="send-btn" >
 	</form>
 </section>
 
@@ -270,5 +284,6 @@
 <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
 <!-- link to javascript -->
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/contactValidation.js"></script>
 </body>
 </html>

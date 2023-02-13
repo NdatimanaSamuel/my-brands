@@ -79,18 +79,23 @@
 <!-- div class="btnmove">
  		 <a href="addNewBlog.html"><buttons class="btplus"><i class='bx bx-plus'></i>ADD NEW</button></a>
  	</div> -->
- 	<form action="#">
+ 	<form action="" id="contact-form">
         
  
         <div class="container">
         	<div class="headerblog">
             <span >Adde New Blog</span>
              </div>
-            <input type="file"  name="uname" required>
+             <div class="input-control">
+                 <input id="photo" type="file"  name="" >
+           
+             <div class="error"></div>
+              </div>
  
-            
-            <input type="text" placeholder="Description" name="psw" required>
- 
+              <div class="input-control">
+            <input id="descr" type="text" placeholder="Description" name="" >
+              <div class="error"></div>
+              </div>
             <button type="submit">Save</button>
          
         </div>
@@ -194,5 +199,6 @@
 		$('#menu').toggleClass("active");
 	})
 </script>
+<script type="text/javascript" src="js/addBlogValidation.js"></script>
 </body>
 </html>
