@@ -6,6 +6,7 @@
 <!-- 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" > -->
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js" ></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
 
@@ -40,8 +41,30 @@
  	</div>
  	<div class="profile">
  		<!-- <i class='bx bxs-bell-ring' ></i> -->
- 		<img src="images/profile.jpg">
+ 		<img src="images/profile.jpg"  onclick="toggleMenu()">
  	</div>
+    <div class="sub-menu-wrap"  id="subMenu">
+    <div class="sub-menu">
+      <div class="user-info">
+        <img src="images/profile.jpg">
+        <h3>Samuel Samuma</h3>
+
+      </div>
+      <hr>
+      <a href="#" class="sub-menu-link">
+               <img src="images/photos.jpg">
+               <p>Edit Profile</p>
+               <span>></span>
+      </a>
+
+      <a href="../login.html" class="sub-menu-link">
+               <img src="images/photos.jpg">
+               <p>Logout</p>
+               <span>></span>
+      </a>
+
+    </div>
+  </div>
  </div>	
  
  <h3 class="i-name">
@@ -86,111 +109,63 @@
         	<div class="headerblog">
             <span >Adde New Blog</span>
              </div>
+
+             
              <div class="input-control">
+                 <input id="title" type="text" placeholder="Title"  name="" >
+           
+             <div class="error"></div>
+              </div>
+
+              <div class="input-control">
                  <input id="photo" type="file"  name="" >
            
              <div class="error"></div>
               </div>
+
+              <div class="input-control">
+                 <input id="dates" type="date"  name="" >
+           
+             <div class="error"></div>
+              </div>
+ 
  
               <div class="input-control">
             <input id="descr" type="text" placeholder="Description" name="" >
               <div class="error"></div>
               </div>
             <button type="submit">Save</button>
+
          
         </div>
  
        
     </form>
-<!--  <dir class="board">
+
+  <!--   <h5 class="text-center my-3">Tasks</h5>
+
+<div id="tasks"></div> -->
+ <dir class="board">
  	
 
- 	<table width="100%">
+ 	<table width="100%" >
  		<thead>
  			<tr>
- 				<td>Name</td>
+ 				<td>photo</td>
  				<td>Title</td>
- 				<td>Status</td>
- 				<td>Role</td>
+        <td>Date</td>
+        <td>Status</td>
+ 				<td>Description</td>
  				<td>Action</td>
  			</tr>
  		</thead>
- 		<tbody>
- 			<tr>
- 				<td class="people">
- 					<img src="images/imageone.jpg">
- 					<div class="people-de">
- 						<h5>John Doe</h5>
- 						<p>john@gmail.com</p>
- 					</div>
- 				</td>
- 				<td class="people-desc">
- 					<h5>Software Engineer</h5>
- 					<p>Web Dev</p>
-
- 				</td>
- 				<td class="active">
- 					<p>Active</p>
- 				</td>
- 				<td class="role">
- 					<p>Owner</p>
- 				</td>
- 				<td>
- 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
- 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
- 				</td>
- 			</tr>
- 			<tr>
- 				<td class="people">
- 					<img src="images/imagethree.jpg">
- 					<div class="people-de">
- 						<h5>John Doe</h5>
- 						<p>john@gmail.com</p>
- 					</div>
- 				</td>
- 				<td class="people-desc">
- 					<h5>Software Engineer</h5>
- 					<p>Web Dev</p>
-
- 				</td>
- 				<td class="active">
- 					<p>Active</p>
- 				</td>
- 				<td class="role">
- 					<p>Owner</p>
- 				</td>
- 				<td>
- 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
- 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
- 				</td>
- 			</tr>
- 			<tr>
- 				<td class="people">
- 					<img src="images/imagetwo.jpg">
- 					<div class="people-de">
- 						<h5>John Doe</h5>
- 						<p>john@gmail.com</p>
- 					</div>
- 				</td>
- 				<td class="people-desc">
- 					<h5>Software Engineer</h5>
- 					<p>Web Dev</p>
-
- 				</td>
- 				<td class="active">
- 					<p>Active</p>
- 				</td>
- 				<td class="role">
- 					<p>Owner</p>
- 				</td>
- 				<td>
- 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
- 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
- 				</td>
- 			</tr>
+ 		<tbody id="tasks">
+ 			
+ 
+ 
  		</tbody>
  	</table>
- </dir> -->
+ </dir>
 </section>
 
 
@@ -199,6 +174,7 @@
 		$('#menu').toggleClass("active");
 	})
 </script>
+<script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/addBlogValidation.js"></script>
 </body>
 </html>

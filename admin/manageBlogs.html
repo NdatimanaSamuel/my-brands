@@ -40,8 +40,30 @@
  	</div>
  	<div class="profile">
  		<!-- <i class='bx bxs-bell-ring' ></i> -->
- 		<img src="images/profile.jpg">
+ 		 		<img src="images/profile.jpg"  onclick="toggleMenu()">
  	</div>
+    <div class="sub-menu-wrap"  id="subMenu">
+    <div class="sub-menu">
+      <div class="user-info">
+        <img src="images/profile.jpg">
+        <h3>Samuel Samuma</h3>
+
+      </div>
+      <hr>
+      <a href="#" class="sub-menu-link">
+               <img src="images/photos.jpg">
+               <p>Edit Profile</p>
+               <span>></span>
+      </a>
+
+      <a href="../login.html" class="sub-menu-link">
+               <img src="images/photos.jpg">
+               <p>Logout</p>
+               <span>></span>
+      </a>
+
+    </div>
+  </div>
  </div>	
  
  <h3 class="i-name">
@@ -85,10 +107,10 @@
  	<table width="100%">
  		<thead>
  			<tr>
- 				<td>Name</td>
- 				<td>Title</td>
+ 				<td>Photo</td>
+ 				<td>Description</td>
  				<td>Status</td>
- 				<td>Role</td>
+ 				<td>Title</td>
  				<td>Action</td>
  			</tr>
  		</thead>
@@ -96,10 +118,10 @@
  			<tr>
  				<td class="people">
  					<img src="images/imageone.jpg">
- 					<div class="people-de">
+ 				<!-- 	<div class="people-de">
  						<h5>John Doe</h5>
  						<p>john@gmail.com</p>
- 					</div>
+ 					</div> -->
  				</td>
  				<td class="people-desc">
  					<h5>Software Engineer</h5>
@@ -115,9 +137,10 @@
  				<td>
  					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
  					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
+          
  				</td>
  			</tr>
- 			<tr>
+ 			<!-- <tr>
  				<td class="people">
  					<img src="images/imagethree.jpg">
  					<div class="people-de">
@@ -140,8 +163,8 @@
  					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
  					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
  				</td>
- 			</tr>
- 			<tr>
+ 			</tr> -->
+ 		<!-- 	<tr>
  				<td class="people">
  					<img src="images/imagetwo.jpg">
  					<div class="people-de">
@@ -164,7 +187,7 @@
  					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
  					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
  				</td>
- 			</tr>
+ 			</tr> -->
  		</tbody>
  	</table>
  </dir>
@@ -176,5 +199,7 @@
 		$('#menu').toggleClass("active");
 	})
 </script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/addBlogValidation.js"></script>
 </body>
 </html>

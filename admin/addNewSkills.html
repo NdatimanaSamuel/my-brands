@@ -40,8 +40,30 @@
  	</div>
  	<div class="profile">
  		<!-- <i class='bx bxs-bell-ring' ></i> -->
- 		<img src="images/profile.jpg">
- 	</div>
+ 	    <img src="images/profile.jpg"  onclick="toggleMenu()">
+  </div>
+    <div class="sub-menu-wrap"  id="subMenu">
+    <div class="sub-menu">
+      <div class="user-info">
+        <img src="images/profile.jpg">
+        <h3>Samuel Samuma</h3>
+
+      </div>
+      <hr>
+      <a href="#" class="sub-menu-link">
+               <img src="images/photos.jpg">
+               <p>Edit Profile</p>
+               <span>></span>
+      </a>
+
+      <a href="../login.html" class="sub-menu-link">
+               <img src="images/photos.jpg">
+               <p>Logout</p>
+               <span>></span>
+      </a>
+
+    </div>
+  </div>
  </div>	
  
  <h3 class="i-name">
@@ -197,6 +219,7 @@
 		$('#menu').toggleClass("active");
 	})
 </script>
+<script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/addSkillsValidation.js"></script>
 </body>
 </html>

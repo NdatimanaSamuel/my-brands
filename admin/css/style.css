@@ -393,10 +393,10 @@ table{
         width: 70%;
         margin-left: 30px;
         background: #F8F8F8;
-        height: 310px;
+        height: 420px;
     }
         input[type=text],
-    input[type=file] {
+    input[type=file] , input[type=date] {
 
         width: 50%;
         padding: 12px 20px;

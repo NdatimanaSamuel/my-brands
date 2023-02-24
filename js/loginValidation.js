@@ -62,7 +62,7 @@ const validateInputs = () => {
     const valid_sandi = localStorage.getItem('register_sandi')
 
     if (emailValue, passwordValue === '') {
-        alert('Data not valid ❌')
+        alert('Data not valid ')
         return false
     }
 
@@ -73,7 +73,7 @@ const validateInputs = () => {
     } else {
         localStorage.setItem('login_email', emailValue)
         localStorage.setItem('login_sandi', passwordValue)
-        alert('Login successfuly ✅')
+        alert('Login successfuly ')
         window.location = 'admin/index.html'
     }
     }
