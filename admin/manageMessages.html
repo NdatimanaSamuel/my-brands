@@ -17,10 +17,10 @@
 
  <div class="items">
  	<li><i class='bx bxs-dashboard'></i><a href="index.html">Dashboard</a></li>
- 	<li><i class='bx bxs-calendar-edit'></i><a href="manageBlogs.html">Manage Blogs</a></li>
- 	<li class="active"><i class='bx bx-list-plus'></i><a href="manageSkills.html">Manage Skills</a></li>
- 	<li><i class='bx bx-bar-chart-square'></i><a href="manageReviews.html">Manage Reviews</a></li>
- 	<li><i class='bx bxs-comment-add'></i><a href="manageMessages.html">Manage Messages</a></li>
+ 	<li  ><i class='bx bxs-calendar-edit'></i><a href="manageBlogs.html">Manage Blogs</a></li>
+ 	<li><i class='bx bx-list-plus'></i><a href="manageSkills.html">Manage Skills</a></li>
+ 	<li ><i class='bx bx-bar-chart-square'></i><a href="manageReviews.html">Manage Reviews</a></li>
+ 	<li class="active"><i class='bx bxs-comment-add'></i><a href="manageMessages.html">Manage Messages</a></li>
  </div>
 
 </section>
@@ -40,8 +40,8 @@
  	</div>
  	<div class="profile">
  		<!-- <i class='bx bxs-bell-ring' ></i> -->
- 	    <img src="images/profile.jpg"  onclick="toggleMenu()">
-  </div>
+ 		 		<img src="images/profile.jpg"  onclick="toggleMenu()">
+ 	</div>
     <div class="sub-menu-wrap"  id="subMenu">
     <div class="sub-menu">
       <div class="user-info">
@@ -67,7 +67,7 @@
  </div>	
  
  <h3 class="i-name">
- 	 Manage Skills
+ 	 Manage Messages
  </h3>
 <!--  <div class="values">
  	<div class="val-box">
@@ -98,45 +98,23 @@
  	
 
  </div> -->
-<!-- div class="btnmove">
- 		 <a href="addNewBlog.html"><buttons class="btplus"><i class='bx bx-plus'></i>ADD NEW</button></a>
+<!-- <div class="btnmove">
+ 		 <a href="addNewBlog.html"><button class="btplus"><i class='bx bx-plus'></i>Add New</button></a>
  	</div> -->
- 	<form action="" id="contact-form" >
-        
- 
-        <div class="container">
-        	<div class="headerblog">
-            <span >Adde New Skills</span>
-             </div>
-                <div class="input-control">
-            <input id="title" type="text" placeholder="Skill Title" name="uname" >
-           <div class="error"></div>
-              </div>
-             <div class="input-control">
-            <input id="descr" type="text" placeholder="Skill Description" name="psw" >
-              <div class="error"></div>
-              </div>
-            <button type="submit">Save</button>
-         
-        </div>
- 
-       
-    </form>
-<!--  <dir class="board">
+ <dir class="board">
  	
 
- 	<table width="100%">
+ 	<table width="100%" id="messages-table">
  		<thead>
  			<tr>
- 				<td>Name</td>
- 				<td>Title</td>
- 				<td>Status</td>
- 				<td>Role</td>
- 				<td>Action</td>
+ 				<td>Names</td>
+ 				<td>Subject</td>
+ 				<td>Message</td>
+ 				<td>Sent on</td>
  			</tr>
  		</thead>
  		<tbody>
- 			<tr>
+ 			<!-- <tr>
  				<td class="people">
  					<img src="images/imageone.jpg">
  					<div class="people-de">
@@ -155,10 +133,7 @@
  				<td class="role">
  					<p>Owner</p>
  				</td>
- 				<td>
- 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
- 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
- 				</td>
+ 				
  			</tr>
  			<tr>
  				<td class="people">
@@ -179,10 +154,7 @@
  				<td class="role">
  					<p>Owner</p>
  				</td>
- 				<td>
- 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
- 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
- 				</td>
+ 				
  			</tr>
  			<tr>
  				<td class="people">
@@ -203,14 +175,11 @@
  				<td class="role">
  					<p>Owner</p>
  				</td>
- 				<td>
- 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
- 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
- 				</td>
- 			</tr>
+ 				
+ 			</tr> -->
  		</tbody>
  	</table>
- </dir> -->
+ </dir>
 </section>
 
 
@@ -219,7 +188,7 @@
 		$('#menu').toggleClass("active");
 	})
 </script>
+<script type="text/javascript" src="js/showMessages.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/addSkillsValidation.js"></script>
 </body>
 </html>

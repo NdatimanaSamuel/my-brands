@@ -20,7 +20,7 @@
  	<li  class="active"><i class='bx bxs-calendar-edit'></i><a href="manageBlogs.html">Manage Blogs</a></li>
  	<li><i class='bx bx-list-plus'></i><a href="manageSkills.html">Manage Skills</a></li>
  	<li><i class='bx bx-bar-chart-square'></i><a href="manageReviews.html">Manage Reviews</a></li>
- 	<li><i class='bx bxs-comment-add'></i><a href="">Manage Messages</a></li>
+ 	<li><i class='bx bxs-comment-add'></i><a href="manageMessages.html">Manage Messages</a></li>
  </div>
 
 </section>
@@ -104,24 +104,24 @@
  <dir class="board">
  	
 
- 	<table width="100%">
+ 	<table width="100%" id="blog-table">
  		<thead>
  			<tr>
- 				<td>Photo</td>
- 				<td>Description</td>
- 				<td>Status</td>
+ 				<!-- <td>Photo</td> -->
  				<td>Title</td>
- 				<td>Action</td>
+ 				<td>Content</td>
+ 				<td>Author</td>
+ 				<td>Actions</td>
  			</tr>
  		</thead>
  		<tbody>
- 			<tr>
+ 			<!-- <tr>
  				<td class="people">
  					<img src="images/imageone.jpg">
- 				<!-- 	<div class="people-de">
+ 					<div class="people-de">
  						<h5>John Doe</h5>
  						<p>john@gmail.com</p>
- 					</div> -->
+ 					</div>
  				</td>
  				<td class="people-desc">
  					<h5>Software Engineer</h5>
@@ -139,7 +139,7 @@
  					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
           
  				</td>
- 			</tr>
+ 			</tr> -->
  			<!-- <tr>
  				<td class="people">
  					<img src="images/imagethree.jpg">
@@ -199,6 +199,7 @@
 		$('#menu').toggleClass("active");
 	})
 </script>
+<script type="text/javascript" src="js/showBlogs.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/addBlogValidation.js"></script>
 </body>

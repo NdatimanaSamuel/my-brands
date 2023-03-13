@@ -69,5 +69,26 @@ const validateInputs=() =>{
     else
     {
     	setSuccess(messages);
+
+        const data = {names:namesValue,subject:subjectValue,messages:messageValue };
+        
+        fetch('https://naughty-clam-clothes.cyclic.app/api/v1/sendMessage',{
+               
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(data)
+        })
+        .then((response) =>{
+            return response.json();
+            
+         })
+         .then((data)=>{
+            alert(data.message);
+            
+            window.location = 'index.html'
+          })
+          .catch(error =>alert(error))
     }
 };

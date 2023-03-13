@@ -83,15 +83,32 @@ const validateInputs = () => {
     } else {
         setSuccess(password);
 
-        localStorage.setItem('register_email', emailValue)
-        localStorage.setItem('register_sandi', passwordValue)
-        alert('Register success')
-        window.location = 'login.html'
+        // localStorage.setItem('register_email', emailValue)
+        // localStorage.setItem('register_sandi', passwordValue)
+        // alert('Register success')
+        // window.location = 'login.html'
+
+        // have our values in one object
+         const data = {fullname:namesValue,email:emailValue, password:passwordValue };
+         console.log(data);
+         
+         fetch('https://naughty-clam-clothes.cyclic.app/api/v1/signup',{
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(data)
+         }).then((response) =>{
+            return response.json();
+            
+         })
+         .then((data)=>{
+           alert(data.message);
+           
+           window.location = 'login.html'
+         })
+         .catch(error =>alert(error))
+
     }
-   
-
-    
-
-   
-
 };

@@ -44,3 +44,29 @@ let scrollTop=document.querySelector('.scroll-top');
 //about form
 
 
+//about show new all blog
+const blogPlace=document.querySelector('.containers');
+let output='';
+
+fetch('https://naughty-clam-clothes.cyclic.app/api/v1/blogs')
+ 
+.then((response) => response.json())
+.then((blogs)=>{
+    blogs.data.forEach(allblog => {
+       output +=`
+       <div class="blogcard">
+       <img src="${
+        allblog.image
+      }">
+       <div class="carddetails">
+         
+         <p>${allblog.content}</p>
+       <a href="#" class="btn" style="margin-left: 30px; margin-bottom: 10px;">LearMore</a>
+       </div>
+     </div>
+       
+       `;
+    });
+    blogPlace.innerHTML=output;
+
+});

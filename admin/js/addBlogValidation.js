@@ -4,10 +4,22 @@ const descr=document.getElementById('descr');
 const title=document.getElementById('title');
 const dates=document.getElementById('dates');
 
+let blogImage=document.getElementById("photo");
+let image;
+
+document.querySelector("#photo").addEventListener("change",function(){
+  const reader=new FileReader();
+  reader.addEventListener("load",()=>{
+    localStorage.setItem("image",reader.result);
+  });
+  reader.readAsDataURL(this.files[0]);
+})
+
+
 forms.addEventListener('submit', e =>{
  e.preventDefault();
    validateInputs();
-   saveBlogData();
+  //  saveBlogData();
 
 
 });
@@ -33,7 +45,7 @@ const setSuccess = element => {
 
 
 const validateInputs=() =>{
-
+  // const fileInput = document.getElementById('photo').files[0];
   const photoValue=photo.value.trim();
   const descrValue=descr.value.trim();
   const titleValue=title.value.trim();
@@ -100,129 +112,156 @@ const validateInputs=() =>{
        // });
       
        // reader.readAsDataURL(image.files[0]);
-       acceptData();
+      //  acceptData();
+
+      
+       Image=localStorage.getItem("image");
+       blogImage=Image;
+
+       const data={title:titleValue,author:datesValue,content:descrValue,image:blogImage};
+      //  const data={title:titleValue,author:datesValue,content:descrValue,image:formdata};
+       console.log(data);
+     
+
+       fetch('https://naughty-clam-clothes.cyclic.app/api/v1/blogs',{
+
+       method:"POST",
+       headers:{
+        "Content-Type":"application/json"
+       },
+       body:JSON.stringify(data)
+
+       })
+       .then((response)=>{
+         return response.json();
+       })
+       .then((data)=>{
+          alert(data.message);
+          window.location = 'manageBlogs.html'
+       })
+       .catch(error =>alert(error))
 
  }
 
 };
 
 
-const saveBlogData=function () {
-let  descrValue=descr.value.trim();
- let  titleValue=title.value.trim();
+// const saveBlogData=function () {
+// let  descrValue=descr.value.trim();
+//  let  titleValue=title.value.trim();
 
-   var reader=new FileReader();
-   var blogs=JSON.parse(localStorage.getItem("blogs")) || [];
+//    var reader=new FileReader();
+//    var blogs=JSON.parse(localStorage.getItem("blogs")) || [];
 
-       let blogData={};
+//        let blogData={};
 
-       reader.addEventListener('load',()=>{
-           blogData.title=titleValue;
-           blogData.description=descrValue;
-           blogData.image=reader.result;
+//        reader.addEventListener('load',()=>{
+//            blogData.title=titleValue;
+//            blogData.description=descrValue;
+//            blogData.image=reader.result;
           
-           blogs.push(blogData);
-           localStorage.setItem("blogs",JSON.stringify(blogs));
+//            blogs.push(blogData);
+//            localStorage.setItem("blogs",JSON.stringify(blogs));
 
-       });
+//        });
       
-        reader.readAsDataURL(photo.files[0]);
-         alert('Blog Added');
-         titleValue.value="";
-         descrValue.value="";
+//         reader.readAsDataURL(photo.files[0]);
+//          alert('Blog Added');
+//          titleValue.value="";
+//          descrValue.value="";
 
-}
-
-
+// }
 
 
-let data = [];
 
-let acceptData = () => {
-  data.push({
-    text: title.value,
-    dates:dates.value,
-    description: descr.value,
-    // description: textarea.value,
-  });
 
-  localStorage.setItem("data", JSON.stringify(data));
+// let data = [];
 
-  console.log(data);
-  createTasks();
-};
+// let acceptData = () => {
+//   data.push({
+//     text: title.value,
+//     dates:dates.value,
+//     description: descr.value,
+//     // description: textarea.value,
+//   });
 
-let createTasks = () => {
-  tasks.innerHTML = "";
-  data.map((x, y) => {
-    return (tasks.innerHTML += `
+//   localStorage.setItem("data", JSON.stringify(data));
 
-      <tr >
-        <td class="people" id=${y}>
-          <img src="images/imageone.jpg">
-          <!-- <div class="people-de">
-            <h5>John Doe</h5>
-            <p>john@gmail.com</p>
-          </div> -->
-        </td>
-        <td class="people-desc">
+//   console.log(data);
+//   createTasks();
+// };
+
+// let createTasks = () => {
+//   tasks.innerHTML = "";
+//   data.map((x, y) => {
+//     return (tasks.innerHTML += `
+
+//       <tr >
+//         <td class="people" id=${y}>
+//           <img src="images/imageone.jpg">
+//           <!-- <div class="people-de">
+//             <h5>John Doe</h5>
+//             <p>john@gmail.com</p>
+//           </div> -->
+//         </td>
+//         <td class="people-desc">
           
-          <p>${x.text}</p>
+//           <p>${x.text}</p>
 
-        </td>
-        <td class="people-desc">
+//         </td>
+//         <td class="people-desc">
           
-          <p>${x.dates}</p>
+//           <p>${x.dates}</p>
 
-        </td>
-        <td class="active">
-          <p>Active</p>
-        </td>
-        <td class="role">
-          <p>${x.description}</p>
-        </td>
-        <td>
-          <a href="#" class="edit" onClick= "editTask(this)"><i class='bx bx-edit-alt' ></i></a>
-          <a href="#" class="delete" onClick ="deleteTask(this);createTasks()"><i class='bx bx-trash' ></i></a>
-        </td>
-      </tr>
+//         </td>
+//         <td class="active">
+//           <p>Active</p>
+//         </td>
+//         <td class="role">
+//           <p>${x.description}</p>
+//         </td>
+//         <td>
+//           <a href="#" class="edit" onClick= "editTask(this)"><i class='bx bx-edit-alt' ></i></a>
+//           <a href="#" class="delete" onClick ="deleteTask(this);createTasks()"><i class='bx bx-trash' ></i></a>
+//         </td>
+//       </tr>
 
     
-    `);
-  });
+//     `);
+//   });
 
-  resetForm();
-};
+//   resetForm();
+// };
 
-let resetForm = () => {
-  title.value = "";
-  descr.value = "";
+// let resetForm = () => {
+//   title.value = "";
+//   descr.value = "";
 
-};
+// };
 
 
-let deleteTask = (e) => {
-  e.parentElement.parentElement.remove();
+// let deleteTask = (e) => {
+//   e.parentElement.parentElement.remove();
 
-  data.splice(e.parentElement.parentElement.id, 1);
+//   data.splice(e.parentElement.parentElement.id, 1);
 
-  localStorage.setItem("data", JSON.stringify(data));
+//   localStorage.setItem("data", JSON.stringify(data));
 
-  console.log(data);
-};
+//   console.log(data);
+// };
 
-let editTask = (e) => {
-  let selectedTask = e.parentElement.parentElement;
+// let editTask = (e) => {
+//   let selectedTask = e.parentElement.parentElement;
 
-  title.value = selectedTask.children[0].innerHTML;
-  descr.value = selectedTask.children[1].innerHTML;
-  // textarea.value = selectedTask.children[2].innerHTML;
+//   title.value = selectedTask.children[0].innerHTML;
+//   descr.value = selectedTask.children[1].innerHTML;
+//   // textarea.value = selectedTask.children[2].innerHTML;
 
-  deleteTask(e);
-};
+//   deleteTask(e);
+// };
 
-(() => {
-  data = JSON.parse(localStorage.getItem("data")) || [];
-  console.log(data);
-  createTasks();
-})();
+// (() => {
+//   data = JSON.parse(localStorage.getItem("data")) || [];
+//   console.log(data);
+//   createTasks();
+// })();

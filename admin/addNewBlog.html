@@ -21,7 +21,7 @@
  	<li  class="active"><i class='bx bxs-calendar-edit'></i><a href="manageBlogs.html">Manage Blogs</a></li>
  	<li><i class='bx bx-list-plus'></i><a href="manageSkills.html">Manage Skills</a></li>
  	<li><i class='bx bx-bar-chart-square'></i><a href="manageReviews.html">Manage Reviews</a></li>
- 	<li><i class='bx bxs-comment-add'></i><a href="">Manage Messages</a></li>
+ 	<li><i class='bx bxs-comment-add'></i><a href="manageMessages.html">Manage Messages</a></li>
  </div>
 
 </section>
@@ -102,7 +102,7 @@
 <!-- div class="btnmove">
  		 <a href="addNewBlog.html"><buttons class="btplus"><i class='bx bx-plus'></i>ADD NEW</button></a>
  	</div> -->
- 	<form action="" id="contact-form">
+ 	<form action="" id="contact-form" enctype="multipart/form-data">
         
  
         <div class="container">
@@ -124,14 +124,14 @@
               </div>
 
               <div class="input-control">
-                 <input id="dates" type="date"  name="" >
+                 <input id="dates" type="text"  name="" placeholder="Author" >
            
              <div class="error"></div>
               </div>
  
  
               <div class="input-control">
-            <input id="descr" type="text" placeholder="Description" name="" >
+            <input id="descr" type="text"   placeholder="Content" name=""  maxlength="200" >
               <div class="error"></div>
               </div>
             <button type="submit">Save</button>
@@ -145,7 +145,7 @@
   <!--   <h5 class="text-center my-3">Tasks</h5>
 
 <div id="tasks"></div> -->
- <dir class="board">
+ <!-- <dir class="board">
  	
 
  	<table width="100%" >
@@ -165,7 +165,7 @@
  
  		</tbody>
  	</table>
- </dir>
+ </dir> -->
 </section>
 
 

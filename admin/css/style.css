@@ -322,7 +322,7 @@ tbody tr td{
    
 }
 table{
-	width: 100%;
+	width: 30%;
 	border-collapse: collapse;
 }
 
@@ -570,3 +570,32 @@ table{
   font-weight: 600;
 
 }
+
+rebutton {
+	text-decoration: none;
+	font-size: 14px;
+	font-weight:500;
+	cursor: pointer;
+	background-color: #e74c3c;
+	color: #fff;
+	border: none;
+	margin-right: 5px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+
+  }
+
+  edibutton{
+	text-decoration: none;
+	font-size: 14px;
+	font-weight:500;
+	cursor: pointer;
+	background-color: #009999;
+	color: #fff;
+	border: none;
+	margin-right: 5px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+  }

@@ -58,24 +58,54 @@ const validateInputs = () => {
         setSuccess(password);
 
 
-    const valid_email = localStorage.getItem('register_email')
-    const valid_sandi = localStorage.getItem('register_sandi')
+    // const valid_email = localStorage.getItem('register_email')
+    // const valid_sandi = localStorage.getItem('register_sandi')
 
-    if (emailValue, passwordValue === '') {
-        alert('Data not valid ')
-        return false
-    }
+    // if (emailValue, passwordValue === '') {
+    //     alert('Data not valid ')
+    //     return false
+    // }
 
-    if (emailValue != valid_email || passwordValue != valid_sandi) {
+    // if (emailValue != valid_email || passwordValue != valid_sandi) {
 
-       errortwos.innerText = 'Your account not found! Register Now!!';
+    //    errortwos.innerText = 'Your account not found! Register Now!!';
     
-    } else {
-        localStorage.setItem('login_email', emailValue)
-        localStorage.setItem('login_sandi', passwordValue)
-        alert('Login successfuly ')
-        window.location = 'admin/index.html'
-    }
+    // } else {
+    //     localStorage.setItem('login_email', emailValue)
+    //     localStorage.setItem('login_sandi', passwordValue)
+    //     alert('Login successfuly ')
+    //     window.location = 'admin/index.html'
+
+    //     const data = {email:emailValue, password:passwordValue };
+    //       console.log(data);
+    // }
+
+    const data = {email:emailValue, password:passwordValue };
+        
+
+         fetch('https://naughty-clam-clothes.cyclic.app/api/v1/login',{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(data)
+         })
+         .then((response)=>{
+            return response.json();
+         })
+         .then((data)=>{
+            console.log(data);
+            if(data.token){
+                localStorage.setItem("authToken", data.token)
+                location.href="admin/index.html"
+            }
+
+          
+            else{
+               alert(data.message);
+            }
+         })
+         .catch(err => alert(err))
     }
 
    

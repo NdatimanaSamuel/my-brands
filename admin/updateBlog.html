@@ -6,6 +6,7 @@
 <!-- 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" > -->
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js" ></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
 
@@ -17,8 +18,8 @@
 
  <div class="items">
  	<li><i class='bx bxs-dashboard'></i><a href="index.html">Dashboard</a></li>
- 	<li><i class='bx bxs-calendar-edit'></i><a href="manageBlogs.html">Manage Blogs</a></li>
- 	<li class="active"><i class='bx bx-list-plus'></i><a href="manageSkills.html">Manage Skills</a></li>
+ 	<li  class="active"><i class='bx bxs-calendar-edit'></i><a href="manageBlogs.html">Manage Blogs</a></li>
+ 	<li><i class='bx bx-list-plus'></i><a href="manageSkills.html">Manage Skills</a></li>
  	<li><i class='bx bx-bar-chart-square'></i><a href="manageReviews.html">Manage Reviews</a></li>
  	<li><i class='bx bxs-comment-add'></i><a href="manageMessages.html">Manage Messages</a></li>
  </div>
@@ -40,8 +41,8 @@
  	</div>
  	<div class="profile">
  		<!-- <i class='bx bxs-bell-ring' ></i> -->
- 	    <img src="images/profile.jpg"  onclick="toggleMenu()">
-  </div>
+ 		<img src="images/profile.jpg"  onclick="toggleMenu()">
+ 	</div>
     <div class="sub-menu-wrap"  id="subMenu">
     <div class="sub-menu">
       <div class="user-info">
@@ -67,7 +68,7 @@
  </div>	
  
  <h3 class="i-name">
- 	 Manage Skills
+ 	 Manage Blogs
  </h3>
 <!--  <div class="values">
  	<div class="val-box">
@@ -101,113 +102,67 @@
 <!-- div class="btnmove">
  		 <a href="addNewBlog.html"><buttons class="btplus"><i class='bx bx-plus'></i>ADD NEW</button></a>
  	</div> -->
- 	<form action="" id="contact-form" >
+ 	<form action="" id="contact-form" enctype="multipart/form-data">
         
  
         <div class="container">
         	<div class="headerblog">
-            <span >Adde New Skills</span>
+            <span >Update Exist Blog</span>
              </div>
-                <div class="input-control">
-            <input id="title" type="text" placeholder="Skill Title" name="uname" >
-           <div class="error"></div>
-              </div>
+
+             
              <div class="input-control">
-            <input id="descr" type="text" placeholder="Skill Description" name="psw" >
+                 <input id="title" type="text" placeholder="Title"  name="" >
+           
+             <div class="error"></div>
+              </div>
+
+              <div class="input-control">
+                 <input id="photo" type="file"  name="" >
+           
+             <div class="error"></div>
+              </div>
+
+              <div class="input-control">
+                 <input id="dates" type="text"  name="" placeholder="Author" >
+           
+             <div class="error"></div>
+              </div>
+ 
+ 
+              <div class="input-control">
+            <input id="descr" type="text"  placeholder="Content" name=""  maxlength="200" >
               <div class="error"></div>
               </div>
-            <button type="submit">Save</button>
+            <button type="submit">Update</button>
+
          
         </div>
  
        
     </form>
-<!--  <dir class="board">
+
+  <!--   <h5 class="text-center my-3">Tasks</h5>
+
+<div id="tasks"></div> -->
+ <!-- <dir class="board">
  	
 
- 	<table width="100%">
+ 	<table width="100%" >
  		<thead>
  			<tr>
- 				<td>Name</td>
+ 				<td>photo</td>
  				<td>Title</td>
- 				<td>Status</td>
- 				<td>Role</td>
+        <td>Date</td>
+        <td>Status</td>
+ 				<td>Description</td>
  				<td>Action</td>
  			</tr>
  		</thead>
- 		<tbody>
- 			<tr>
- 				<td class="people">
- 					<img src="images/imageone.jpg">
- 					<div class="people-de">
- 						<h5>John Doe</h5>
- 						<p>john@gmail.com</p>
- 					</div>
- 				</td>
- 				<td class="people-desc">
- 					<h5>Software Engineer</h5>
- 					<p>Web Dev</p>
-
- 				</td>
- 				<td class="active">
- 					<p>Active</p>
- 				</td>
- 				<td class="role">
- 					<p>Owner</p>
- 				</td>
- 				<td>
- 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
- 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
- 				</td>
- 			</tr>
- 			<tr>
- 				<td class="people">
- 					<img src="images/imagethree.jpg">
- 					<div class="people-de">
- 						<h5>John Doe</h5>
- 						<p>john@gmail.com</p>
- 					</div>
- 				</td>
- 				<td class="people-desc">
- 					<h5>Software Engineer</h5>
- 					<p>Web Dev</p>
-
- 				</td>
- 				<td class="active">
- 					<p>Active</p>
- 				</td>
- 				<td class="role">
- 					<p>Owner</p>
- 				</td>
- 				<td>
- 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
- 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
- 				</td>
- 			</tr>
- 			<tr>
- 				<td class="people">
- 					<img src="images/imagetwo.jpg">
- 					<div class="people-de">
- 						<h5>John Doe</h5>
- 						<p>john@gmail.com</p>
- 					</div>
- 				</td>
- 				<td class="people-desc">
- 					<h5>Software Engineer</h5>
- 					<p>Web Dev</p>
-
- 				</td>
- 				<td class="active">
- 					<p>Active</p>
- 				</td>
- 				<td class="role">
- 					<p>Owner</p>
- 				</td>
- 				<td>
- 					<a href="#" class="edit"><i class='bx bx-edit-alt'></i></a>
- 					<a href="#" class="delete"><i class='bx bx-trash'></i></a>
- 				</td>
- 			</tr>
+ 		<tbody id="tasks">
+ 			
+ 
+ 
  		</tbody>
  	</table>
  </dir> -->
@@ -220,6 +175,6 @@
 	})
 </script>
 <script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/addSkillsValidation.js"></script>
+<script type="text/javascript" src="js/updateBlogValidation.js"></script>
 </body>
 </html>
