@@ -4,6 +4,19 @@ const descr=document.getElementById('descr');
 const title=document.getElementById('title');
 const dates=document.getElementById('dates');
 
+let blogImage=document.getElementById("photo");
+let image;
+
+document.querySelector("#photo").addEventListener("change",function(){
+  const reader=new FileReader();
+  reader.addEventListener("load",()=>{
+    localStorage.setItem("image",reader.result);
+  });
+  reader.readAsDataURL(this.files[0]);
+})
+
+
+
 var blogKeyId = sessionStorage.getItem("blogIdKey");
 showData(blogKeyId);
 
@@ -93,31 +106,34 @@ const validateInputs=() =>{
 
 
     
-     const fileInput = document.getElementById('photo');
-     let reader = new FileReader();
-     let result;
+    //  const fileInput = document.getElementById('photo');
+    //  let reader = new FileReader();
+    //  let result;
      
-     // Lister to the change event on the <input> element
-     fileInput.addEventListener('change', (event) => {
-         // Get the selected image file
-         const imageFile = event.target.files[0];
+    //  // Lister to the change event on the <input> element
+    //  fileInput.addEventListener('change', (event) => {
+    //      // Get the selected image file
+    //      const imageFile = event.target.files[0];
      
-         if (imageFile) {
+    //      if (imageFile) {
              
      
-             // Convert the image file to a string
-             reader.readAsDataURL(imageFile);
+    //          // Convert the image file to a string
+    //          reader.readAsDataURL(imageFile);
      
-             // FileReader will emit the load event when the data URL is ready
-             // Access the string using result property inside the callback function
-             reader.addEventListener('load', () => {
-                 // Get the data URL string
-                 console.log(reader.result);
-             });
-         }
-     });
+    //          // FileReader will emit the load event when the data URL is ready
+    //          // Access the string using result property inside the callback function
+    //          reader.addEventListener('load', () => {
+    //              // Get the data URL string
+    //              console.log(reader.result);
+    //          });
+    //      }
+    //  });
 
-       const data={title:titleValue,author:datesValue,content:descrValue,image:reader.result};
+     Image=localStorage.getItem("image");
+     blogImage=Image;
+
+       const data={title:titleValue,author:datesValue,content:descrValue,image:blogImage};
        console.log(data);
 
        fetch(`https://naughty-clam-clothes.cyclic.app/api/v1/blogs/${blogKeyId}`,{

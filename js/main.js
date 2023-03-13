@@ -53,6 +53,7 @@ fetch('https://naughty-clam-clothes.cyclic.app/api/v1/blogs')
 .then((response) => response.json())
 .then((blogs)=>{
     blogs.data.forEach(allblog => {
+      
        output +=`
        <div class="blogcard">
        <img src="${
@@ -60,7 +61,7 @@ fetch('https://naughty-clam-clothes.cyclic.app/api/v1/blogs')
       }">
        <div class="carddetails">
          
-         <p>${allblog.content}</p>
+         <p class="card_preview_text">${allblog.content}</p>
        <a href="#" class="btn" style="margin-left: 30px; margin-bottom: 10px;">LearMore</a>
        </div>
      </div>
